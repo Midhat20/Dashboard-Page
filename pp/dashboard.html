@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="dashboard.css">
+
+    <title> Dashboard</title>
+
+  <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+                <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> &times; </a>
+                <a href="#"><span class="fa fa-minus fa-lg"></span>  &nbsp; Details</a>
+                <a href="#"><span class="fa fa-minus fa-lg"></span> &nbsp; Update</a>
+                <!-- <hr class="line"> -->
+                <a href="#"><span class="fa fa-sign-out fa-lg"></span> &nbsp;Logout</a>
+              </div>
+
+
+              <span class="board"  onclick="openNav()"> <span class="fa fa-navicon "></span> &nbsp;  Dashboard </span>
+
+
+            </nav>
+
+         <div class="row cnt1">
+           <ol class="col-12 breadcrumb">
+           <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+           <li class="breadcrumb-item active">Dashboard</li>
+         </ol>
+             <div class="col-12 col-sm-12">
+                <h3 class="dashboard">Welcome back to Dashboard!</h3>
+                <hr>
+             </div>
+         </div>
+ <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            background-color: #9FE1FB;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+
+        .calendar {
+            margin: auto;
+            width: 600px;
+            background-color: #fff;
+            box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.2);
+       
+        }
+
+        .month {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 40px 30px;
+            text-align: center;
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        .weekdays {
+            background-color: #27ae60;
+            color: #fff;
+            padding: 6px 0;
+            display: flex;
+        }
+
+        .days {
+            font-weight: 100;
+            padding: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .weekdays div,
+        .days div {
+            text-align: center;
+            width: 14.28%;
+        }
+
+        .days div {
+            padding: 10px 0;
+            margin-bottom: 10px;
+            transition: all 0.4s;
+        }
+
+        .prev_date {
+            color: #999;
+        }
+
+        .today {
+            background-color: #27ae60;
+            color: #fff;
+        }
+
+        .days div:hover {
+            cursor: pointer;
+            background-color: #dfe6e9
+        }
+
+        .prev,
+        .next {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 23px;
+            background-color: rgba(0, 0, 0, 0.1);
+            transition: all 0.4s;
+        }
+
+        .prev:hover,
+        .next:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        #month {
+            font-size: 30px;
+            font-weight: 500;
+        }
+    </style>
+  
+
+        <!-- <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+              <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+
+
+              <div class="collapse navbar-collapse" id="Navbar">
+
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"><a class="nav-link" href="#">    <span class="fa fa-home fa-lg"></span> Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-info fa-lg"></span> Details</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-edit fa-lg"></span> Update</a></li>
+                </ul>
+
+                <span class="navbar-text" id="btn2">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item "><a class="nav-link" href="#"> <span class="fa fa-sign-out fa-lg"></span>Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-trash fa-lg"></span> Delete Account</a></li>
+                  </ul>
+
+                </span>
+
+             </div>
+              </div>
+        </nav> -->
+
+
+
+<div class="row row-content" >
+
+                     <div class="col-12 col-sm-6 ">
+                         <h2> Face Data Accuracy</h2>
+                         <img class="pic"src="acc.png" alt="accuracy">
+                    </div>
+                    <div class="col-12 col-sm-6 ">
+                      <h2> Update User Details</h2>
+                      <div class="align-self-center">
+                        <img class="pic"src="user.jfif" alt="face">
+                      </div>
+
+                   </div>   
+                   <hr>
+
+      <div class="col-12 col-sm-6">
+         <h2>Calender</h2>
+<div class="align-self-center">
+     <body onload="renderDate()">
+    
+        <div class="calendar">
+            <div class="month">
+                <div class="prev" onclick="moveDate('prev')">
+                    <span>&#10094;</span>
+                </div>
+                <div>
+                    <h2 id="month"></h2>
+                    <p id="date_str"></p>
+                </div>
+                <div class="next" onclick="moveDate('next')">
+                    <span>&#10095;</span>
+                </div>
+            </div>
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var dt = new Date();
+        function renderDate() {
+            dt.setDate(1);
+            var day = dt.getDay();
+            var today = new Date();
+            var endDate = new Date(
+                dt.getFullYear(),
+                dt.getMonth() + 1,
+                0
+            ).getDate();
+
+            var prevDate = new Date(
+                dt.getFullYear(),
+                dt.getMonth(),
+                0
+            ).getDate();
+            var months = [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ]
+            document.getElementById("month").innerHTML = months[dt.getMonth()];
+            document.getElementById("date_str").innerHTML = dt.toDateString();
+            var cells = "";
+            for (x = day; x > 0; x--) {
+                cells += "<div class='prev_date'>" + (prevDate - x + 1) + "</div>";
+            }
+            console.log(day);
+            for (i = 1; i <= endDate; i++) {
+                if (i == today.getDate() && dt.getMonth() == today.getMonth()) cells += "<div class='today'>" + i + "</div>";
+                else
+                    cells += "<div>" + i + "</div>";
+            }
+            document.getElementsByClassName("days")[0].innerHTML = cells;
+
+        }
+
+        function moveDate(para) {
+            if(para == "prev") {
+                dt.setMonth(dt.getMonth() - 1);
+            } else if(para == 'next') {
+                dt.setMonth(dt.getMonth() + 1);
+            }
+            renderDate();
+        }
+    </script>
+</body>
+
+</div>
+
+
+
+
+<div class="col-12 col-sm-6 ">
+                      <h2> Feedback </h2>
+                      <div class="align-self-center">
+                        <img class="pic"src="feedback.png" alt="">
+                    <hr>
+         <form>
+  
+  <div class="form-group">
+    
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <br>
+  <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+</form>
+
+
+
+            </div>
+ 
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/b605b6abff.js"></script>
+
+
+
+  </body>
+</html>
